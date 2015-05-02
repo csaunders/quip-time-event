@@ -46,14 +46,19 @@ public class QuickTimeTracker
 
 	public string PartialMessage()
 	{
+		return messageAt (_timer);
+	}
+
+	private string messageAt(float time)
+	{
 		string message = "";
 		int count = 0;
-		int position = (int)(_timer * _charsPerS);
+		int position = positionFor (time);
 		foreach (char c in _phrase) {
 			if (count > position) {
 				break;
 			}
-
+			
 			if (c != QTE_IDENTIFIER || UnityEngine.Debug.isDebugBuild) {
 				message += c;
 			}
@@ -65,6 +70,11 @@ public class QuickTimeTracker
 	public void Update(float dt)
 	{
 		_timer += dt;
+	}
+
+	private int positionFor(float time)
+	{
+		return (int)(time * _charsPerS);
 	}
 
 	public float Score()
@@ -118,6 +128,15 @@ public class QuickTimeTracker
 			}
 		}
 		return closest;
+	}
+
+	public ArrayList QuickTimeStrings()
+	{
+		ArrayList qtStrings = new ArrayList ();
+		foreach (float time in _timings) {
+			qtStrings.Add (messageAt (time));
+		}
+		return qtStrings;
 	}
 }
 
