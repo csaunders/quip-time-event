@@ -5,24 +5,51 @@ using System.Collections;
 public class QuipSystem : MonoBehaviour {
 	
 	public Text quipPlayer;
-	public float flickerLimit = 1.0f;
-	public float renderSpeedModifier = 1.0f;
+	public Text quipGuide;
+	public Text successText;
+	public Text debugLog;
+	public float characterRenderSpeed = 0.30f;
+	public float accuracyBuffer = 0.60f;
 	
-	madlib.Template template;
-	public float timer;
-	public string phrase = "some people just |qte,want| to watch the world |qte, burn|.";
+	private string phrase = "some people just wa%nt to watch the world bu%rn.";
+	private QuickTimeTracker tracker;
 
 	// Use this for initialization
 	void Start () {
-		timer = 0;
+		Reset ();
+	}
+
+	public void Reset() {
+		tracker = new QuickTimeTracker (phrase, characterRenderSpeed, accuracyBuffer);
+
+		quipPlayer.text = "";
+		quipGuide.text = tracker.FullMessage ();
+		successText.text = "--- Nothing ---";
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		timer += Time.deltaTime * renderSpeedModifier;
-		if (timer > flickerLimit) {
-			timer = 0;
-			quipPlayer.enabled = !quipPlayer.enabled;
+		handleInput ();
+		tracker.Update (Time.deltaTime);
+		quipPlayer.text = tracker.PartialMessage();
+		debugData ();
+	}
+
+	private void handleInput()
+	{
+		if (Input.GetKeyDown (KeyCode.R)) {
+			Reset ();
 		}
+		if (Input.GetKeyDown (KeyCode.F)) {
+		}
+	}
+
+	private void debugData()
+	{
+		debugLog.text = "";
+		debugLog.text += string.Format ("Timer: {0}\n", tracker.Timer);
+		debugLog.text += string.Format ("Closest Time: {0}\n", tracker.ClosestTime);
+		debugLog.text += string.Format ("Score: {0}\n", tracker.Score());
+		debugLog.text += string.Format ("All Times: {0}\n", tracker.AllTimes);
 	}
 }

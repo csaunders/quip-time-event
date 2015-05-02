@@ -79,10 +79,11 @@ namespace madlib
 	}
 
 	public class QuickTimeEvent : IRenderable {
+		private static string QTE_HEADER = "qte,";
 		public string Content;
 		public QuickTimeEvent(string content)
 		{
-			Content = content;
+			Content = content.Substring(QTE_HEADER.Length);
 		}
 
 		public string Value()
@@ -93,6 +94,11 @@ namespace madlib
 		public bool IsQTE()
 		{
 			return true;
+		}
+
+		public static bool IsQTE(string item)
+		{
+			return item.StartsWith(QTE_HEADER);
 		}
 
 
@@ -160,30 +166,86 @@ namespace madlib
 
 	public class Template
 	{
+		private static char TRIGGER = '%';
+		public float BufferSize = 0.300f;
+		private bool _perfectTimingPosition = false;
+		private int _position;
+		
 		public ArrayList Renderers { get; set; }
-		private string _renderedText;
+
+		private int _length;
+		public int Length {
+			get {
+				return _fullText.Length;
+			}
+		}
+
+		private string _fullText;
+		public string RenderFull() {
+			string renderedText = "";
+			foreach (IRenderable renderable in Renderers)
+			{
+				renderedText += renderable.Value ();
+			}
+			return renderedText;
+		}
+
+		private string _text;
+		public string Text {
+			get { return _text; }
+		}
+
+		public bool InQTE()
+		{
+			return false;
+		}
+
+		public bool IsPerfect()
+		{
+			return _perfectTimingPosition;
+		}
+
+		public bool IsClose()
+		{
+			bool late = !IsPerfect() && InQTE();
+			return late;
+		}
 
 		public Template()
 		{
 			Renderers = new ArrayList ();
+			Reset ();
 		}
 
-		public string Render()
+		public void Reset()
 		{
-			if(_renderedText == null)
-			{
-				_renderedText = "";
-				foreach(IRenderable renderable in Renderers)
-				{
-					_renderedText += renderable.Value();
+			_text = "";
+			_position = 0;
+			_perfectTimingPosition = false;
+		}
+
+		public void IncrPosition()
+		{
+			_position++;
+			if (_position < _fullText.Length) {
+				char item = _fullText[_position];
+				if (item != TRIGGER) {
+					_text += item;
+				} else {
+					_perfectTimingPosition = true;
+					_position++;
 				}
-		    }
-			return _renderedText;
+			}
 		}
 
 		public void Add(IRenderable renderer)
 		{
 			Renderers.Add (renderer);
+			Reset ();
+		}
+
+		public void Ready() {
+			_fullText = RenderFull();
 		}
 	}
 
@@ -203,6 +265,10 @@ namespace madlib
 				if(s.IsEntry(item))
 				{
 					t.Add (new Entry(item));
+				}
+				else if (QuickTimeEvent.IsQTE(item))
+				{
+					t.Add (new QuickTimeEvent(item));
 				}
 				else
 				{
