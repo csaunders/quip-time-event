@@ -11,25 +11,27 @@ using System;
 public class Quiptionary
 {
 	// entries in arrays need to end with a comma
-	// except for the last one.
-	// Because computer raisins
 	public static string[] Quips = 
-		new string[
-        	"this is a%n example of a qu%ick time event",
-			"with mo%re than a sin%gle entry in it"
-		];
+	new string[]{
+		"this is a%n example of a qu%ick time event",
+		"with mo%re than a sin%gle entry in it",
+	};
+
 	public static string[] Nouns =
-		new string[
-		           "apple",
-          			"potato"];
+	new string[]{
+		"apple",
+		"potato",
+	};
 
 	public static string[] Verbs = 
-		new string[""
-		           ];
+	new string[]{
+		""
+	};
 
 	public static string[] Adjectives =
-		new string[""
-		           ];
+	new string[]{
+		""
+	};
 	public Quiptionary()
 	{
 	}

@@ -4,9 +4,9 @@ using System.Collections;
 
 public class HealthSystem : MonoBehaviour {
 
-	public static int MAX_HEALTH = 2000;
+	public static float MAX_HEALTH = 2000.0f;
 
-	public int _currentHealth;
+	public float _currentHealth;
 	public Text healthDisplay;
 
 	// Use this for initialization
@@ -15,7 +15,7 @@ public class HealthSystem : MonoBehaviour {
 	}
 
 	public void Update() {
-		healthDisplay = "HP: " + _currentHealth;
+		healthDisplay.text = "HP: " + _currentHealth;
 	}
 
 	public void InflictDamage(float amount)
