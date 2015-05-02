@@ -46,9 +46,11 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\scripts\HealthSystem.cs" />
      <Compile Include="Assets\scripts\Madlib.cs" />
      <Compile Include="Assets\scripts\QuickTimeTracker.cs" />
      <Compile Include="Assets\scripts\QuipSystem.cs" />
+     <Compile Include="Assets\scripts\Quiptionary.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
