@@ -13,24 +13,151 @@ public class Quiptionary
 	// entries in arrays need to end with a comma
 	public static string[] Quips = 
 	new string[]{
-		"this is a%n example of a qu%ick time event",
-		"with mo%re than a sin%gle entry in it",
+		"Thy ve%ry nearn%ess makes me ret%ch!",
+		"Your finest rep%ast is my foul%est movem%ent",
+		"One must b%e of easy vir%tue to procure such lux%ury!",
+		"May thy offs%pring be prof%oundly uncome%ly!",
+		"Doth thy usu%ally reek of mi%re and cow%plop?",
+		"Thy court%iers are as well trai%ned as incont%inent curs!"
+		"Thine ha%ir is like fo%ul lo%in fringe!",
+		"Thou art wo%rth less than th%at of the ord%ure you pro%duce!",
+		"Thine sense o%f sarto%rial flair has bur%ned sig%ht from my eyes!",
+		"Thine pre%sence blocks lig%ht like an ass dark%ens a bowl!",
+		"Thine voi%ce is music of a most foul inter%ior movem%ent!"
+
+
+
 	};
 
 	public static string[] Nouns =
 	new string[]{
-		"apple",
-		"potato",
+		
+		"barnacle",
+		"bugbear",
+		"codpiece",
+		"foot-licker",
+		"haggard",
+		"harpy",
+		"lewdster",
+		"lout",
+		"miscreant",
+		"strumpet",
+		"swine",
+		"vassal",
+		"wagtail",
+		"felon",
+		"bastard",
+		"hag",
+		"halfwit",
+		"horeson",
+		"shrew",
+		"wench",
+		"wretch",
+		"canker",
+		"hell-spawn",
+		"sod",
+		"ingrate",
+		"knave",
+		"puritan",
+		"braggart",
+		"scamp",
+		"scullion",
+		"snake",
+		"scoundrel",
+		"rapscallion",
+		"rake",
+		"pauper",
+		"worm",
+		"beggar",
+		"brute",
+		"vagrant",
+
 	};
 
 	public static string[] Verbs = 
 	new string[]{
-		""
+		
+		"Heaving",
+		"Jack-Knifing",
+		"Buggering",
+		"Hornswaggling",
+		"Transforming",
+		"Flying",
+		"Doting(love)",
+		"Stymied",
+		"Gibbering ",
+		"Grovelling ",
+		"Gasping",
+		"Gaping",
+		"Frothing",
+		"Cowering",
+		"Double-Crossing",
+		"Leaping",
+		"Basting",
+		"Basted",
+		"Unbecoming",
+		"Frightened",
+		"Prating",
+		"Vacillating",
+		"Gesticulating",
+		"Wallowing",
+
+
 	};
 
 	public static string[] Adjectives =
 	new string[]{
-		""
+		"artless",
+		"afeared",
+		"arrant",
+		"bawdy",
+		"bootless",
+		"boot-licking",
+		"cockered",
+		"craven",
+		"crafty",
+		"dankish",
+		"droning",
+		"errant",
+		"fawning",
+		"fool-born",
+		"frothy",
+		"goatish",
+		"ill-bred",
+		"impertinent",
+		"infectious",
+		"jarring",
+		"lumpish",
+		"mammering",
+		"mangled",
+		"mewling",
+		"paunchy",
+		"puny",
+		"rank",
+		"rhapsodic",
+		"roguish",
+		"ruttish",
+		"saucy",
+		"surly",
+		"superfluous",
+		"tawdry",
+		"tottering",
+		"vain",
+		"venomed",
+		"villainous",
+		"wayward",
+		"weedy",
+		"dog-hearted",
+		"milk-livered",
+		"pox-marked",
+		"sheep-biting",
+		"rump-fed",
+		"toad-spotted",
+		"swag-bellied",
+		"fly-bitten",
+		"elf-skinned",
+		"common-kissing",
+		"beef-witted",
 	};
 	public Quiptionary()
 	{
