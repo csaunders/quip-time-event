@@ -10,6 +10,7 @@ public class QuipSystem : MonoBehaviour {
 	public Text quipGuide;
 	public Text successText;
 	public Text debugLog;
+	public float deltaModifier = 10.0f;
 	public float characterRenderSpeed = 0.30f;
 	public float accuracyBuffer = 0.60f;
 	
@@ -24,6 +25,7 @@ public class QuipSystem : MonoBehaviour {
 	}
 
 	public void Reset() {
+		phrase = RandomQTEMessage ();
 		tracker = new QuickTimeTracker (phrase, characterRenderSpeed, accuracyBuffer);
 
 		quipPlayer.text = "";
@@ -34,7 +36,7 @@ public class QuipSystem : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		handleInput ();
-		tracker.Update (Time.deltaTime);
+		tracker.Update (Time.deltaTime * deltaModifier);
 		quipPlayer.text = tracker.PartialMessage();
 		debugData ();
 	}
@@ -75,5 +77,11 @@ public class QuipSystem : MonoBehaviour {
 		Vector3 start = new Vector3 (position.x + rect.x + size.x - (sizeOfPercentSymbol.x / 2), position.y - 10, 100);
 		Vector3 end = new Vector3(position.x + rect.x + size.x - (sizeOfPercentSymbol.x / 2), position.y + 10, 100);
 		Debug.DrawLine(start, end, Color.white);
+	}
+
+	private string RandomQTEMessage()
+	{
+		int quipId = (int) Random.Range(0, Quiptionary.Quips.Length);
+		return Quiptionary.Quips[quipId];
 	}
 }

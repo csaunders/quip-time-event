@@ -2,10 +2,11 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class HealthSystem : MonoBehaviour {
+public abstract class HealthSystem : MonoBehaviour {
 
 	public static float MAX_HEALTH = 2000.0f;
 	public Text healthDisplay;
+	public bool IsTurn;
 	
 	private float _currentHealth;
 
@@ -26,4 +27,14 @@ public class HealthSystem : MonoBehaviour {
 	public bool IsDead(){
 		return _currentHealth <= 0.0f;
 	}
+
+	public void EndTurn() {
+		Other ().IsTurn = true;
+		Other ().BeforeTurnStart ();
+
+		IsTurn = false;
+	}
+
+	public abstract HealthSystem Other ();
+	public abstract void BeforeTurnStart();
 }
