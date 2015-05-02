@@ -70,12 +70,16 @@ public class QuickTimeTracker
 	public float Score()
 	{
 		float time = findClosestTime (_timer);
-		double delta = Math.Abs(time - _timer);
+		float delta = (float) Math.Abs(time - _timer);
+		if (delta > _accuracyBuffer) {
+			return 0.0f;
+		}
+
 		if (delta <= PERFECT_ACCURACY) {
 			return ACCURACY_SCORE;
-		} else {
-			return (float) Math.Pow(ACCURACY_SCORE, _accuracyBuffer / delta );
 		}
+
+		return ACCURACY_SCORE *  (1.0f - (delta / _accuracyBuffer));
 	}
 
 	public ArrayList calculateTimings()
