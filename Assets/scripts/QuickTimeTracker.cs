@@ -37,7 +37,7 @@ public class QuickTimeTracker
 	{
 		string message = "";
 		foreach (char c in _phrase) {
-			if (c != QTE_IDENTIFIER || UnityEngine.Debug.isDebugBuild) {
+			if (c != QTE_IDENTIFIER || IsDebug()) {
 				message += c;
 			}
 		}
@@ -59,7 +59,7 @@ public class QuickTimeTracker
 				break;
 			}
 			
-			if (c != QTE_IDENTIFIER || UnityEngine.Debug.isDebugBuild) {
+			if (c != QTE_IDENTIFIER || IsDebug()) {
 				message += c;
 			}
 			count++;
@@ -149,6 +149,10 @@ public class QuickTimeTracker
 			qtStrings.Add (messageAt (time));
 		}
 		return qtStrings;
+	}
+
+	private bool IsDebug() {
+		return UnityEngine.Debug.isDebugBuild && false;
 	}
 }
 

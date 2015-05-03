@@ -13,10 +13,15 @@ public class QuipSystem : MonoBehaviour {
 	public float deltaModifier = 10.0f;
 	public float characterRenderSpeed = 0.30f;
 	public float accuracyBuffer = 0.60f;
+
+	public GameObject AButton, BButton, XButton, YButton;
+	public Canvas ButtonOverlay;
 	
 	private string phrase = "some peo%ple just wa%nt to wat%ch th%e world bu%rn.";
 	private QuickTimeTracker tracker;
 	public QuickTimeTracker Tracker { get { return tracker; } }
+
+	private ArrayList overlayButtons = new ArrayList();
 
 	// Use this for initialization
 	void Start () {
@@ -25,8 +30,14 @@ public class QuipSystem : MonoBehaviour {
 	}
 
 	public void Reset() {
+		foreach (GameObject go in overlayButtons) {
+			Object.Destroy (go);
+		}
+		overlayButtons.Clear ();
 		phrase = RandomQTEMessage ();
+
 		tracker = new QuickTimeTracker (phrase, characterRenderSpeed, accuracyBuffer);
+		addOverlayButtons ();
 
 		quipPlayer.text = "";
 		quipGuide.text = tracker.FullMessage ();
@@ -73,10 +84,36 @@ public class QuipSystem : MonoBehaviour {
 		Rect rect = txt.rectTransform.rect;
 		Vector2 size = style.CalcSize(new GUIContent(msg));
 
-		Vector2 sizeOfPercentSymbol = style.CalcSize (new GUIContent ("%"));
-		Vector3 start = new Vector3 (position.x + rect.x + size.x - (sizeOfPercentSymbol.x / 2), position.y - 10, 100);
-		Vector3 end = new Vector3(position.x + rect.x + size.x - (sizeOfPercentSymbol.x / 2), position.y + 10, 100);
-		Debug.DrawLine(start, end, Color.white);
+		Vector2 sizeOfPercentSymbol = style.CalcSize (new GUIContent (""));
+		float positionX = position.x + rect.x + size.x - (sizeOfPercentSymbol.x / 2);
+		float positionY = position.y;
+		Debug.DrawLine(new Vector3(positionX, positionY + 10, 100), new Vector3(positionX, positionY - 10, 100), Color.white);
+	}
+
+	private GameObject buildButton(string msg, Text txt)
+	{
+		GUIStyle style = new GUIStyle ();
+		style.font = txt.font;
+		style.fontSize = txt.fontSize;
+		Vector3 position = txt.transform.position;
+		Rect rect = txt.rectTransform.rect;
+		Vector2 size = style.CalcSize(new GUIContent(msg));
+		
+		Vector2 sizeOfPercentSymbol = style.CalcSize (new GUIContent (""));
+		float positionX = position.x + rect.x + size.x - (sizeOfPercentSymbol.x / 2);
+		float positionY = position.y + rect.height;
+		
+		return (GameObject) Instantiate (AButton, new Vector3 (positionX, positionY, 100), Quaternion.identity);
+	}
+
+	private void addOverlayButtons()
+	{
+		foreach (string qte in tracker.QuickTimeStrings()) {
+			GameObject item = buildButton(qte, quipPlayer);
+			item.transform.parent = quipGuide.transform;
+			item.SetActive(true);
+			overlayButtons.Add (item);
+		}
 	}
 
 	private string RandomQTEMessage()
