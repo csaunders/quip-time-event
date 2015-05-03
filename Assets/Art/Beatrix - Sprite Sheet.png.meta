@@ -1,0 +1,154 @@
+fileFormatVersion: 2
+guid: 82db0b8ba3aaf9349bbf9d8c175b47bd
+timeCreated: 1430679200
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Beatrix - Sprite Sheet_0
+    21300002: Beatrix - Sprite Sheet_1
+    21300004: Beatrix - Sprite Sheet_2
+    21300006: Beatrix - Sprite Sheet_3
+    21300008: Beatrix - Sprite Sheet_4
+    21300010: Beatrix - Sprite Sheet_5
+    21300012: Beatrix - Sprite Sheet_6
+    21300014: Beatrix - Sprite Sheet_7
+    21300016: Beatrix - Sprite Sheet_8
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Beatrix - Sprite Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 774
+        width: 164
+        height: 226
+      alignment: 9
+      pivot: {x: .614588976, y: .489605397}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Beatrix - Sprite Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 772
+        width: 224
+        height: 228
+      alignment: 9
+      pivot: {x: .47902599, y: .427879214}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Beatrix - Sprite Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 629
+        width: 141
+        height: 125
+      alignment: 9
+      pivot: {x: .266758859, y: .105355471}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Beatrix - Sprite Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 417
+        width: 151
+        height: 203
+      alignment: 9
+      pivot: {x: .911738813, y: .856795907}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Beatrix - Sprite Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 513
+        width: 167
+        height: 249
+      alignment: 9
+      pivot: {x: .492967069, y: .066034399}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Beatrix - Sprite Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 375
+        width: 141
+        height: 244
+      alignment: 9
+      pivot: {x: .175128475, y: .745497167}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Beatrix - Sprite Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 644
+        width: 188
+        height: 127
+      alignment: 9
+      pivot: {x: .856109619, y: .204053506}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Beatrix - Sprite Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 31
+        width: 464
+        height: 449
+      alignment: 9
+      pivot: {x: .459498763, y: .0108279036}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Beatrix - Sprite Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 676
+        width: 92
+        height: 67
+      alignment: 9
+      pivot: {x: .549275577, y: .439855784}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
