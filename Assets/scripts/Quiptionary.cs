@@ -20,7 +20,7 @@ public class Quiptionary
 		"Doth thy usu%ally reek of mi%re and cow%plop?",
 		"Thy court%iers are as well trai%ned as incont%inent curs!",
 		"Thine ha%ir is like fo%ul lo%in fringe!",
-		"Thou art wo%rth less th% an th%at of the ord%ure you pro%duce!",
+		"Thou art wo%rth less th%an th%at of the ord%ure you pro%duce!",
 		"Thine sense o%f sarto%rial f%lair has bur%ned sig%ht from my eyes!",
 		"Thine pre%sence blocks lig%ht like an as%s dark%ens a bo%wl!",
 		"Thine voi%ce is mu%sic of a mo%st foul inter%ior movem%ent!",

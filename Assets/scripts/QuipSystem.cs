@@ -145,7 +145,6 @@ public class QuipSystem : MonoBehaviour {
 			yield return new WaitForSeconds(i);
 			GameObject[] buttons = new GameObject[]{AButton, BButton, XButton, YButton};
 			GameObject prefab = buttons[Random.Range (0, buttons.Length)];
-			prefab = AButton;
 			GameObject item = buildButton(pair.Message, quipPlayer, prefab);
 			item.transform.parent = quipGuide.transform;
 			item.SetActive(true);
