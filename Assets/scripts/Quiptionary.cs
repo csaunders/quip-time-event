@@ -22,9 +22,9 @@ public class Quiptionary
 		"Thou art wo%rth less than th%at of the ord%ure you pro%duce!",
 		"Thine sense o%f sarto%rial flair has bur%ned sig%ht from my eyes!",
 		"Thine presen%ce blocks lig%ht like an as%s dark%ens a bo%wl!",
-		"Thine voice is mu%sic of a mo%st foul inter%ior movem%ent!"
-		"Hast your pers%onal carri%age heaved foul win%ds in my direc%tion, 
-		or does one simply sme%ll of tawdry copula%tion at all hours?",
+		"Thine voice is mu%sic of a mo%st foul inter%ior movem%ent!",
+		"Hast your pers%onal carri%age heaved foul win%ds in my direc%tion",
+		"Dost thou sme%ll of taw%dry copula%tion at all ho%urs?",
 		"Begone, filthy whelp%! I have no use for a mam%mering, lump%ish trol%lop such as you!",
 		"Thy hair is as fo%ul as a pox-%marked bov%ine!",
 		"Hast thou been tou%ched by a pla%gue of doltishne%ss, you mewling peas%ant?",
