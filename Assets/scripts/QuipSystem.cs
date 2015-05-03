@@ -25,6 +25,18 @@ public class QuipSystem : MonoBehaviour {
 	private Hashtable lookup = new Hashtable();
 	private Hashtable eventsForPrefab = new Hashtable();
 
+	public class KeyValuePair
+	{
+		public string Key { get; set; }
+		public GameObject Value { get; set; }
+
+		public KeyValuePair(string key, GameObject value)
+		{
+			Key = key;
+			Value = value;
+		}
+	}
+
 	// Use this for initialization
 	void Start () {
 		GodObject = this;
@@ -128,11 +140,12 @@ public class QuipSystem : MonoBehaviour {
 		}
 	}
 
-	public string NextButton {
+	public KeyValuePair NextButton {
 		get {
 			string msg = tracker.messageAt (tracker.ClosestTime);
 			GameObject obj = (GameObject) lookup [msg];
-			return (string) lookup[obj];
+			string button = (string) lookup[obj];
+			return new KeyValuePair(button, obj);
 		}
 	}
 
