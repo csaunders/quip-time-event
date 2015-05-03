@@ -1,11 +1,13 @@
 fileFormatVersion: 2
 guid: 814e30637d9dc29439a76f566b909e50
-timeCreated: 1430605015
+timeCreated: 1430675008
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: Interface_0
     21300002: Interface_1
+    21300004: Interface_2
+    21300006: Interface_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -68,6 +70,26 @@ TextureImporter:
         y: 78
         width: 811
         height: 184
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Interface_2
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 731
+        width: 360
+        height: 266
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Interface_3
+      rect:
+        serializedVersion: 2
+        x: 1548
+        y: 742
+        width: 365
+        height: 281
       alignment: 0
       pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
