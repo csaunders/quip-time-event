@@ -27,9 +27,12 @@ public class Player : HealthSystem {
 			return;
 		}
 
-		if (Input.GetButtonDown(system.NextButton))
+		QuipSystem.KeyValuePair pair = system.NextButton;
+		if (Input.GetButtonDown(pair.Key))
 		{
-			_damage += system.Tracker.Score();
+			float score = system.Tracker.Score();
+			changeAnimationState(pair.Value, score);
+			_damage += score;
 		}
 	}
 
@@ -41,6 +44,16 @@ public class Player : HealthSystem {
 		Debug.Log ("Computer is still null");
 		_computer = (Computer) GameObject.Find ("Computer").GetComponent (typeof(Computer));
 		system = QuipSystem.GodObject;
+	}
+
+	private void changeAnimationState(GameObject obj, float score)
+	{
+		Animator anim = (Animator)obj.GetComponent<Animator> ();
+		if (score == 0) {
+			anim.SetTrigger ("Failure");
+		} else {
+			anim.SetTrigger ("Success");
+		}
 	}
 
 	public override void BeforeTurnStart ()
