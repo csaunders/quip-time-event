@@ -1,12 +1,12 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/scripts/HealthSystem.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\scripts\Player.cs">
     <Files>
-      <File FileName="Assets/scripts/QuipSystem.cs" Line="79" Column="1" />
-      <File FileName="Assets/scripts/QuickTimeTracker.cs" Line="143" Column="1" />
-      <File FileName="Assets/scripts/HealthSystem.cs" Line="17" Column="3" />
-      <File FileName="Assets/scripts/Madlib.cs" Line="1" Column="1" />
-      <File FileName="Assets/scripts/Quiptionary.cs" Line="34" Column="4" />
+      <File FileName="Assets\scripts\Quiptionary.cs" Line="167" Column="1" />
+      <File FileName="Assets\scripts\QuipSystem.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\QuickTimeTracker.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\Madlib.cs" Line="1" Column="1" />
+      <File FileName="Assets\scripts\Player.cs" Line="39" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -17,9 +17,6 @@
       </Pad>
       <Pad Id="MonoDevelop.Debugger.WatchPad">
         <State />
-      </Pad>
-      <Pad Id="ConnectionManagerPad">
-        <State selected="True" />
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>

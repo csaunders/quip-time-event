@@ -18,7 +18,7 @@ public class Quiptionary
 		"One must b%e of easy vir%tue to procure such lux%ury!",
 		"May thy offs%pring be prof%oundly uncome%ly!",
 		"Doth thy usu%ally reek of mi%re and cow%plop?",
-		"Thy court%iers are as well trai%ned as incont%inent curs!"
+		"Thy court%iers are as well trai%ned as incont%inent curs!",
 		"Thine ha%ir is like fo%ul lo%in fringe!",
 		"Thou art wo%rth less than th%at of the ord%ure you pro%duce!",
 		"Thine sense o%f sarto%rial flair has bur%ned sig%ht from my eyes!",
