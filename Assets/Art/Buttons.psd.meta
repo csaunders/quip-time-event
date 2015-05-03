@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 2bc95a69209be8b44a5b4e7276c57d36
-timeCreated: 1430603095
+timeCreated: 1430675393
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -8,6 +8,7 @@ TextureImporter:
     21300002: Buttons_1
     21300004: Buttons_2
     21300006: Buttons_3
+    21300008: Buttons_4
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -92,6 +93,16 @@ TextureImporter:
         height: 520
       alignment: 9
       pivot: {x: .487637967, y: .0678915158}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Buttons_4
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 668
+        width: 449
+        height: 388
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
