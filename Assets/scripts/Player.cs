@@ -58,7 +58,7 @@ public class Player : HealthSystem {
 
 	public override void BeforeTurnStart ()
 	{
-		system.Reset ();
+		system.Reset (true);
 	}
 
 	override public HealthSystem Other() {

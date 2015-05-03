@@ -6,6 +6,7 @@ public abstract class HealthSystem : MonoBehaviour {
 
 	public static float MAX_HEALTH = 2000.0f;
 	public Text healthDisplay;
+	public Animator animator;
 	public GameObject healthBar;
 	public int Direction = 1;
 	public bool IsTurn;

@@ -5,6 +5,7 @@ public class Computer : HealthSystem {
 
 	// Use this for initialization
 	private Player _player;
+	private QuipSystem system;
 	new void Start () {
 		base.Start ();
 	}
@@ -18,8 +19,11 @@ public class Computer : HealthSystem {
 			return;
 		}
 
-		inflictRandomPlayerDamage ();
-		EndTurn ();
+		if (system.Tracker.DonePhrase) {
+			_player.animator.enabled = true;
+			inflictRandomPlayerDamage();
+			EndTurn ();
+		}
 	}
 
 	private void updateReferences()
@@ -29,7 +33,10 @@ public class Computer : HealthSystem {
 			return;
 		}
 
+		Debug.Log ("Player is still null");
+
 		_player = (Player) GameObject.Find ("Player").GetComponent (typeof(Player));
+		system = QuipSystem.GodObject;
 	}
 
 	private void inflictRandomPlayerDamage()
@@ -44,7 +51,8 @@ public class Computer : HealthSystem {
 
 	public override void BeforeTurnStart ()
 	{
-
+		system.Reset (false);
+		_player.animator.enabled = false;
 	}
 
 

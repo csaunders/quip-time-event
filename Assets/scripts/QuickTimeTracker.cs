@@ -140,6 +140,30 @@ public class QuickTimeTracker
 		}
 	}
 
+	public class MessageTimingPair
+	{
+		public string Message { get; set; }
+		public float Timing { get; set; }
+		public MessageTimingPair(string msg, float time){
+			Message = msg;
+			Timing = time;
+		}
+
+		public string ToString()
+		{
+			return Message + ":" + Timing;
+		}
+	}
+
+	public ArrayList MessageTimingPairs()
+	{
+		ArrayList mtPairs = new ArrayList ();
+		foreach (float time in _timings) {
+			mtPairs.Add (new QuickTimeTracker.MessageTimingPair(messageAt (time), time + (_accuracyBuffer/2)));
+		}
+		return mtPairs;
+	}
+
 	public ArrayList QuickTimeStrings()
 	{
 		ArrayList qtStrings = new ArrayList ();

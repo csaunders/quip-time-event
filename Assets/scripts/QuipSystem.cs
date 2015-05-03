@@ -44,10 +44,10 @@ public class QuipSystem : MonoBehaviour {
 		eventsForPrefab [BButton] = EventBButton;
 		eventsForPrefab [XButton] = EventXButton;
 		eventsForPrefab [YButton] = EventYButton;
-		Reset ();
+		Reset (true);
 	}
 
-	public void Reset() {
+	public void Reset(bool drawOverlayButtons) {
 		foreach (DictionaryEntry de in lookup) {
 			if (de.Value is GameObject) {
 				Object.Destroy((GameObject)de.Value);
@@ -57,7 +57,9 @@ public class QuipSystem : MonoBehaviour {
 		phrase = RandomQTEMessage ();
 
 		tracker = new QuickTimeTracker (phrase, characterRenderSpeed, accuracyBuffer);
-		StartCoroutine (addOverlayButtons ());
+		if (drawOverlayButtons) {
+			StartCoroutine (addOverlayButtons ());
+		}
 
 		quipPlayer.text = "";
 		quipGuide.text = tracker.FullMessage ();
@@ -75,7 +77,7 @@ public class QuipSystem : MonoBehaviour {
 	private void handleInput()
 	{
 		if (Input.GetKeyDown (KeyCode.R)) {
-			Reset ();
+			Reset (true);
 			return;
 		}
 	}
@@ -123,22 +125,33 @@ public class QuipSystem : MonoBehaviour {
 		float positionY = position.y + rect.height;
 		
 		GameObject go = (GameObject) Instantiate (prefab, new Vector3 (positionX, positionY, 100), Quaternion.identity);
+
 		return go;
+	}
+
+	private IEnumerator FailedToHitButton(GameObject obj, float firesInSeconds)
+	{
+		Animator anim = (Animator)obj.GetComponent<Animator> ();
+		yield return new WaitForSeconds (firesInSeconds/2);
+		anim.SetTrigger ("Miss");
+		Debug.Log ("Miss called");
+		yield return 0;
 	}
 
 	private IEnumerator addOverlayButtons()
 	{
 		float i = 0.0f;
-		foreach (string qte in tracker.QuickTimeStrings()) {
+		foreach (QuickTimeTracker.MessageTimingPair pair in tracker.MessageTimingPairs()) {
 			yield return new WaitForSeconds(i);
 			GameObject[] buttons = new GameObject[]{AButton, BButton, XButton, YButton};
 			GameObject prefab = buttons[Random.Range (0, buttons.Length)];
 			prefab = AButton;
-			GameObject item = buildButton(qte, quipPlayer, prefab);
+			GameObject item = buildButton(pair.Message, quipPlayer, prefab);
 			item.transform.parent = quipGuide.transform;
 			item.SetActive(true);
-			lookup.Add (qte, item);
+			lookup.Add (pair.Message, item);
 			lookup.Add (item, eventsForPrefab[prefab]);
+
 			i += 0.100f;
 		}
 		yield return 0;
