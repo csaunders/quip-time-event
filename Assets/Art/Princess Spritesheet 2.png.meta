@@ -1,0 +1,143 @@
+fileFormatVersion: 2
+guid: 82c8f4f22c63e7e4a889a54062f50fea
+timeCreated: 1430611916
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Princess Spritesheet 2_0
+    21300002: Princess Spritesheet 2_1
+    21300004: Princess Spritesheet 2_2
+    21300006: Princess Spritesheet 2_3
+    21300008: Princess Spritesheet 2_4
+    21300010: Princess Spritesheet 2_5
+    21300012: Princess Spritesheet 2_6
+    21300014: Princess Spritesheet 2_7
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 8
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 3
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: Princess Spritesheet 2_0
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 240
+        width: 245
+        height: 319
+      alignment: 9
+      pivot: {x: .476340532, y: .22288987}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Princess Spritesheet 2_1
+      rect:
+        serializedVersion: 2
+        x: 214
+        y: 844
+        width: 56
+        height: 73
+      alignment: 2
+      pivot: {x: .5, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Princess Spritesheet 2_2
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 8
+        width: 682
+        height: 1002
+      alignment: 9
+      pivot: {x: .597743154, y: .0531071238}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Princess Spritesheet 2_3
+      rect:
+        serializedVersion: 2
+        x: 1118
+        y: 465
+        width: 329
+        height: 565
+      alignment: 9
+      pivot: {x: .416310608, y: .235819101}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Princess Spritesheet 2_4
+      rect:
+        serializedVersion: 2
+        x: 1578
+        y: 672
+        width: 389
+        height: 346
+      alignment: 9
+      pivot: {x: .835278213, y: .692660987}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Princess Spritesheet 2_5
+      rect:
+        serializedVersion: 2
+        x: 2027
+        y: 644
+        width: 331
+        height: 399
+      alignment: 9
+      pivot: {x: .701391697, y: .783291996}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Princess Spritesheet 2_6
+      rect:
+        serializedVersion: 2
+        x: 1321
+        y: 76
+        width: 190
+        height: 315
+      alignment: 9
+      pivot: {x: .385594428, y: .610411048}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: Princess Spritesheet 2_7
+      rect:
+        serializedVersion: 2
+        x: 1191
+        y: 84
+        width: 119
+        height: 184
+      alignment: 9
+      pivot: {x: .512177289, y: .744149327}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
