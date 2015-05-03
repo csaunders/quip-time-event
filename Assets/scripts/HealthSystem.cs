@@ -21,6 +21,9 @@ public abstract class HealthSystem : MonoBehaviour {
 		animStart = healthBar.transform.position;
 		animEnd = healthBar.transform.position;
 		distanceToCover = 1.0f;
+		if (IsTurn) {
+			animator.SetTrigger ("Talking");
+		}
 		_currentHealth = MAX_HEALTH;	
 	}
 

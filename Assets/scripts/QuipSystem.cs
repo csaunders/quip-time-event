@@ -44,7 +44,8 @@ public class QuipSystem : MonoBehaviour {
 		eventsForPrefab [BButton] = EventBButton;
 		eventsForPrefab [XButton] = EventXButton;
 		eventsForPrefab [YButton] = EventYButton;
-		Reset (true);
+		// BUG: This is hardcoded, should read from Player
+		Reset (false);
 	}
 
 	public void Reset(bool drawOverlayButtons) {

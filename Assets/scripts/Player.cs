@@ -9,7 +9,7 @@ public class Player : HealthSystem {
 
 	new void Start () {
 		base.Start ();
-		animator.SetTrigger ("Talking");
+//		animator.SetTrigger ("Talking");
 		_damage = 0.0f;
 	}
 	
