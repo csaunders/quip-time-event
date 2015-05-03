@@ -9,6 +9,7 @@ public class Player : HealthSystem {
 
 	new void Start () {
 		base.Start ();
+		healthBar = GameObject.FindGameObjectWithTag ("PlayerHPBar");
 		_damage = 0.0f;
 	}
 	
