@@ -14,5 +14,6 @@ Temp
 *.csproj
 *.pidb
 *.sln
+*.log
 Library/CrashedAssetImports.txt
 Library/ShaderCache

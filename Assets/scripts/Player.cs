@@ -27,7 +27,7 @@ public class Player : HealthSystem {
 			return;
 		}
 
-		if (Input.GetButtonDown(system.Tracker.NextButton))
+		if (Input.GetButtonDown(system.NextButton))
 		{
 			_damage += system.Tracker.Score();
 		}

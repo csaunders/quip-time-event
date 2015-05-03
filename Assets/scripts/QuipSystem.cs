@@ -14,6 +14,7 @@ public class QuipSystem : MonoBehaviour {
 	public float characterRenderSpeed = 0.30f;
 	public float accuracyBuffer = 0.60f;
 
+	public string EventAButton, EventBButton, EventXButton, EventYButton;
 	public GameObject AButton, BButton, XButton, YButton;
 	public Canvas ButtonOverlay;
 	
@@ -21,19 +22,26 @@ public class QuipSystem : MonoBehaviour {
 	private QuickTimeTracker tracker;
 	public QuickTimeTracker Tracker { get { return tracker; } }
 
-	private ArrayList overlayButtons = new ArrayList();
+	private Hashtable lookup = new Hashtable();
+	private Hashtable eventsForPrefab = new Hashtable();
 
 	// Use this for initialization
 	void Start () {
 		GodObject = this;
+		eventsForPrefab [AButton] = EventAButton;
+		eventsForPrefab [BButton] = EventBButton;
+		eventsForPrefab [XButton] = EventXButton;
+		eventsForPrefab [YButton] = EventYButton;
 		Reset ();
 	}
 
 	public void Reset() {
-		foreach (GameObject go in overlayButtons) {
-			Object.Destroy (go);
+		foreach (DictionaryEntry de in lookup) {
+			if (de.Value is GameObject) {
+				Object.Destroy((GameObject)de.Value);
+			}
 		}
-		overlayButtons.Clear ();
+		lookup.Clear ();
 		phrase = RandomQTEMessage ();
 
 		tracker = new QuickTimeTracker (phrase, characterRenderSpeed, accuracyBuffer);
@@ -56,8 +64,7 @@ public class QuipSystem : MonoBehaviour {
 	{
 		if (Input.GetKeyDown (KeyCode.R)) {
 			Reset ();
-		}
-		if (Input.GetKeyDown (KeyCode.F)) {
+			return;
 		}
 	}
 
@@ -90,7 +97,7 @@ public class QuipSystem : MonoBehaviour {
 		Debug.DrawLine(new Vector3(positionX, positionY + 10, 100), new Vector3(positionX, positionY - 10, 100), Color.white);
 	}
 
-	private GameObject buildButton(string msg, Text txt)
+	private GameObject buildButton(string msg, Text txt, GameObject prefab)
 	{
 		GUIStyle style = new GUIStyle ();
 		style.font = txt.font;
@@ -103,16 +110,29 @@ public class QuipSystem : MonoBehaviour {
 		float positionX = position.x + rect.x + size.x - (sizeOfPercentSymbol.x / 2);
 		float positionY = position.y + rect.height;
 		
-		return (GameObject) Instantiate (AButton, new Vector3 (positionX, positionY, 100), Quaternion.identity);
+		GameObject go = (GameObject) Instantiate (prefab, new Vector3 (positionX, positionY, 100), Quaternion.identity);
+		return go;
 	}
 
 	private void addOverlayButtons()
 	{
 		foreach (string qte in tracker.QuickTimeStrings()) {
-			GameObject item = buildButton(qte, quipPlayer);
+			GameObject[] buttons = new GameObject[]{AButton, BButton, XButton, YButton};
+			GameObject prefab = buttons[Random.Range (0, buttons.Length)];
+			prefab = AButton;
+			GameObject item = buildButton(qte, quipPlayer, prefab);
 			item.transform.parent = quipGuide.transform;
 			item.SetActive(true);
-			overlayButtons.Add (item);
+			lookup.Add (qte, item);
+			lookup.Add (item, eventsForPrefab[prefab]);
+		}
+	}
+
+	public string NextButton {
+		get {
+			string msg = tracker.messageAt (tracker.ClosestTime);
+			GameObject obj = (GameObject) lookup [msg];
+			return (string) lookup[obj];
 		}
 	}
 

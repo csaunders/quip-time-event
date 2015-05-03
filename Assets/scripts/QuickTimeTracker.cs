@@ -49,7 +49,7 @@ public class QuickTimeTracker
 		return messageAt (_timer);
 	}
 
-	private string messageAt(float time)
+	public string messageAt(float time)
 	{
 		string message = "";
 		int count = 0;
@@ -128,12 +128,6 @@ public class QuickTimeTracker
 			}
 		}
 		return closest;
-	}
-
-	public string NextButton {
-		get {
-			return "Jump";
-		}
 	}
 
 	public bool DonePhrase {
