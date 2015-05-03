@@ -34,7 +34,7 @@ public class Computer : HealthSystem {
 
 	private void inflictRandomPlayerDamage()
 	{
-		float damage = Random.Range(100, 200);
+		float damage = Random.Range(QuickTimeTracker.ACCURACY_SCORE - 100, QuickTimeTracker.ACCURACY_SCORE);
 		_player.InflictDamage (damage);
 	}
 

@@ -57,7 +57,7 @@ public class QuipSystem : MonoBehaviour {
 		phrase = RandomQTEMessage ();
 
 		tracker = new QuickTimeTracker (phrase, characterRenderSpeed, accuracyBuffer);
-		addOverlayButtons ();
+		StartCoroutine (addOverlayButtons ());
 
 		quipPlayer.text = "";
 		quipGuide.text = tracker.FullMessage ();
@@ -85,7 +85,7 @@ public class QuipSystem : MonoBehaviour {
 		debugLog.text = "";
 		debugLog.text += string.Format ("Timer: {0}\n", tracker.Timer);
 		debugLog.text += string.Format ("Closest Time: {0}\n", tracker.ClosestTime);
-		debugLog.text += string.Format ("Score: {0}\n", tracker.Score());
+		debugLog.text += string.Format ("Score: {0}\n", tracker.Score(false));
 		debugLog.text += string.Format ("All Times: {0}\n", tracker.AllTimes);
 
 		foreach (string qte in tracker.QuickTimeStrings()) {
@@ -126,9 +126,11 @@ public class QuipSystem : MonoBehaviour {
 		return go;
 	}
 
-	private void addOverlayButtons()
+	private IEnumerator addOverlayButtons()
 	{
+		float i = 0.0f;
 		foreach (string qte in tracker.QuickTimeStrings()) {
+			yield return new WaitForSeconds(i);
 			GameObject[] buttons = new GameObject[]{AButton, BButton, XButton, YButton};
 			GameObject prefab = buttons[Random.Range (0, buttons.Length)];
 			prefab = AButton;
@@ -137,7 +139,9 @@ public class QuipSystem : MonoBehaviour {
 			item.SetActive(true);
 			lookup.Add (qte, item);
 			lookup.Add (item, eventsForPrefab[prefab]);
+			i += 0.100f;
 		}
+		yield return 0;
 	}
 
 	public KeyValuePair NextButton {

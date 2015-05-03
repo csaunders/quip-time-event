@@ -13,7 +13,7 @@ using System.Collections;
 public class QuickTimeTracker
 {
 	public static char QTE_IDENTIFIER = '%';
-	public static float ACCURACY_SCORE = 100;
+	public static float ACCURACY_SCORE = 300;
 	public static float PERFECT_ACCURACY = 0.100f;
 
 	private string _phrase;
@@ -77,10 +77,14 @@ public class QuickTimeTracker
 		return (int)(time * _charsPerS);
 	}
 
-	public float Score()
+	public float Score(bool remove)
 	{
 		float time = findClosestTime (_timer);
 		float delta = (float) Math.Abs(time - _timer);
+		if (remove) {
+			_timings.Remove (time);
+		}
+
 		if (delta > _accuracyBuffer) {
 			return 0.0f;
 		}

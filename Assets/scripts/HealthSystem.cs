@@ -7,6 +7,7 @@ public abstract class HealthSystem : MonoBehaviour {
 	public static float MAX_HEALTH = 2000.0f;
 	public Text healthDisplay;
 	public GameObject healthBar;
+	public int Direction = 1;
 	public bool IsTurn;
 	
 	private float _currentHealth;
@@ -36,7 +37,7 @@ public abstract class HealthSystem : MonoBehaviour {
 		float percentageDamage = amount / MAX_HEALTH;
 		animStart = healthBar.transform.position;
 		Debug.Log (animStart);
-		animEnd = new Vector3 (animStart.x - 269.0f * percentageDamage, animStart.y, animStart.z);
+		animEnd = new Vector3 (animStart.x - 269.0f * percentageDamage * Direction, animStart.y, animStart.z);
 		Debug.Log (animEnd);
 		distanceToCover = Vector3.Distance (animStart, animEnd);
 		startTime = Time.time;

@@ -9,7 +9,7 @@ public class Player : HealthSystem {
 
 	new void Start () {
 		base.Start ();
-		healthBar = GameObject.FindGameObjectWithTag ("PlayerHPBar");
+//		healthBar = GameObject.FindGameObjectWithTag ("PlayerHPBar");
 		_damage = 0.0f;
 	}
 	
@@ -29,10 +29,9 @@ public class Player : HealthSystem {
 		}
 
 		QuipSystem.KeyValuePair pair = system.NextButton;
-		if (Input.GetButtonDown(pair.Key))
-		{
-			float score = system.Tracker.Score();
-			changeAnimationState(pair.Value, score);
+		if (Input.GetButtonDown (pair.Key)) {
+			float score = system.Tracker.Score (true);
+			changeAnimationState (pair.Value, score);
 			_damage += score;
 		}
 	}
