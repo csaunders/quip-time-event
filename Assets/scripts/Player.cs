@@ -9,7 +9,7 @@ public class Player : HealthSystem {
 
 	new void Start () {
 		base.Start ();
-//		healthBar = GameObject.FindGameObjectWithTag ("PlayerHPBar");
+		animator.SetTrigger ("Talking");
 		_damage = 0.0f;
 	}
 	
@@ -22,6 +22,7 @@ public class Player : HealthSystem {
 		updateReferences ();
 
 		if (system.Tracker.DonePhrase) {
+			animator.SetTrigger("Idle");
 			_computer.InflictDamage(_damage);
 			_damage = 0.0f;
 			EndTurn();
@@ -58,6 +59,7 @@ public class Player : HealthSystem {
 
 	public override void BeforeTurnStart ()
 	{
+		animator.SetTrigger ("Talking");
 		system.Reset (true);
 	}
 

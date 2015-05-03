@@ -20,7 +20,7 @@ public class Computer : HealthSystem {
 		}
 
 		if (system.Tracker.DonePhrase) {
-			_player.animator.enabled = true;
+			animator.SetTrigger ("Idle");
 			inflictRandomPlayerDamage();
 			EndTurn ();
 		}
@@ -41,7 +41,7 @@ public class Computer : HealthSystem {
 
 	private void inflictRandomPlayerDamage()
 	{
-		float damage = Random.Range(QuickTimeTracker.ACCURACY_SCORE - 100, QuickTimeTracker.ACCURACY_SCORE);
+		float damage = Random.Range(QuickTimeTracker.ACCURACY_SCORE - 100, QuickTimeTracker.ACCURACY_SCORE + 100);
 		_player.InflictDamage (damage);
 	}
 
@@ -52,7 +52,7 @@ public class Computer : HealthSystem {
 	public override void BeforeTurnStart ()
 	{
 		system.Reset (false);
-		_player.animator.enabled = false;
+		animator.SetTrigger ("Talking");
 	}
 
 

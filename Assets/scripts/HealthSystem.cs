@@ -9,6 +9,7 @@ public abstract class HealthSystem : MonoBehaviour {
 	public Animator animator;
 	public GameObject healthBar;
 	public int Direction = 1;
+	public int SceneWhenDead;
 	public bool IsTurn;
 	
 	private float _currentHealth;
@@ -29,6 +30,9 @@ public abstract class HealthSystem : MonoBehaviour {
 			float distCovered = (Time.time - startTime) * 100;
 			float fracJourney = distCovered / distanceToCover;
 			healthBar.transform.position = Vector3.Lerp (animStart, animEnd, fracJourney);
+		}
+		if (IsDead ()) {
+			Application.LoadLevel (SceneWhenDead);
 		}
 	}
 
