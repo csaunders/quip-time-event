@@ -18,18 +18,14 @@ public class Quiptionary
 		"One must b%e of easy vir%tue to procure such lux%ury!",
 		"May thy offs%pring be prof%oundly uncome%ly!",
 		"Doth thy usu%ally reek of mi%re and cow%plop?",
-<<<<<<< Updated upstream
 		"Thy court%iers are as well trai%ned as incont%inent curs!",
-=======
-		"Thy court%iers are a%s well trai%ned as incont%inent curs!"
->>>>>>> Stashed changes
 		"Thine ha%ir is like fo%ul lo%in fringe!",
 		"Thou art wo%rth less th% an th%at of the ord%ure you pro%duce!",
 		"Thine sense o%f sarto%rial f%lair has bur%ned sig%ht from my eyes!",
 		"Thine pre%sence blocks lig%ht like an as%s dark%ens a bo%wl!",
-		"Thine voi%ce is mu%sic of a mo%st foul inter%ior movem%ent!"
-		"Hast your pers%onal carri%age heaved foul win%ds in my direc%tion, 
-		or does one sim%ply sme%ll of tawdry copula%tion at al%l hours?",
+		"Thine voi%ce is mu%sic of a mo%st foul inter%ior movem%ent!",
+		"Hast your pers%onal carri%age heaved foul win%ds in my direc%tion", 
+		"Or does one sim%ply sme%ll of tawdry copula%tion at al%l hours?",
 		"Begone, fil%thy whe%lp! I have no use for a mam%mering, lump%ish trol%lop such a%s you!",
 		"Thy ha%ir is a%s fo%ul as a po%x-mar%ked bov%ine!",
 		"Hast thou been tou%ched by a pla%gue of dolt%ishne%ss, you mew%ling peas%ant?",
@@ -99,8 +95,8 @@ public class Quiptionary
 		"worm",
 		"beggar",
 		"brute",
-		"vagrant"
-		"sycophant,
+		"vagrant",
+		"sycophant",
 
 	};
 
